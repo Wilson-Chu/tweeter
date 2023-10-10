@@ -31,3 +31,12 @@ body {
 nav {
   font-family: 'Bungee', sans-serif;
 }
+
+main.container {
+  display: flex;
+  justify-content: center;
+}
+
+main p {
+  width: 90%;
+}
