@@ -10,3 +10,7 @@ header {
   background-color: #a86a00;
   background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
 }
+
+header h2 {
+  color: white;
+}
