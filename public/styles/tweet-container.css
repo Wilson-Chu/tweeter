@@ -4,24 +4,52 @@ article.tweet {
   border: solid #545149;
 }
 
+article.tweet:hover {
+  box-shadow: 0.25em 0.25em 2px 1px rgba(0, 0, 255, .2);
+}
+
 article.tweet header {
   /* Resets all styling from 'header' under navbar */
   all: unset;
-
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+article.tweet .profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  margin: 0;
+}
+
 article.tweet .handle {
   color: rgb(191, 191, 217)
 }
 
+article.tweet .tweet-content {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
 article.tweet footer {
   border-top: solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 article.tweet footer h6 {
   margin: 1em 1.5em 2em 1.5em;
+}
+
+article.tweet footer .fa-solid {
+  margin-left: 0.5em;
+}
+
+article.tweet footer .fa-solid:hover {
+  cursor: pointer;
+  color: goldenrod;
 }
