@@ -15,7 +15,8 @@ section.new-tweet label {
 #tweet-text {
   border: none;
   border-bottom: 3px solid #545149;
-  height: 1.5em;
+  height: 2.5em;
+  font-size: 90%;
   resize: none;
   background-color: #f4f1ec;
   margin-bottom: 0.5em;
