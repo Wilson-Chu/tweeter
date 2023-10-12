@@ -33,7 +33,24 @@ $(document).ready(function() {
   ];
 
   const createTweetElement = function(tweetObj) {
-    let $tweet = $(`<article class="tweet">Hello world</article>`);
+    let $tweet = $(`<article class="tweet">
+    <header>
+      <div class="profile">
+        <img src="${tweetObj.user.avatars}" />
+        <h5>${tweetObj.user.name}</h5>
+        </div>
+      <h5 class="handle">${tweetObj.user.handle}</h5>
+    </header>
+    <p class="tweet-content">${tweetObj.content.text}</p>
+    <footer>
+      <h6>${tweetObj.created_at} days ago</h6>
+      <h6>
+        <i class="fa-solid fa-flag"></i>
+        <i class="fa-solid fa-retweet"></i>
+        <i class="fa-solid fa-heart"></i>
+      </h6>
+    </footer>
+  </article>`);
 
     return $tweet;
   };
@@ -42,8 +59,10 @@ $(document).ready(function() {
     // loops through tweets
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
-    let $tweet = createTweetElement(tweets[0]);
-    $('.tweet-container').append($tweet);
+    for (const tweet of tweets) {
+      let $tweet = createTweetElement(tweet);
+      $('.tweet-container').append($tweet);
+    }
   };
 
   renderTweets(data);
