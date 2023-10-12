@@ -80,11 +80,17 @@ $(document).ready(function() {
     let serializedData = $(this).serialize();
     console.log(serializedData);
     $.post("/tweets", serializedData);
+    loadTweets();
   });
 
   const loadTweets = function() {
     // Use jQuery to make a request to /tweets and receive the array of tweets as JSON
-
+    $.ajax('/tweets', { method: 'GET' })
+      .then(function(tweetData) {
+        console.log('Success: ', tweetData);
+        renderTweets(tweetData); // Pass the JSON data directly to renderTweets
+      });
   };
+
 });
 
