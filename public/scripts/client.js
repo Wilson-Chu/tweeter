@@ -33,15 +33,17 @@ $(document).ready(function() {
   ];
 
   const createTweetElement = function(tweetObj) {
-    let $tweet = /* Your code for creating the tweet element */
-  // ...
-  return $tweet;
+    let $tweet = $(`<article class="tweet">Hello world</article>`);
+
+    return $tweet;
   };
 
   const renderTweets = function(tweets) {
     // loops through tweets
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
+    let $tweet = createTweetElement(tweets[0]);
+    $('.tweet-container').append($tweet);
   };
 
   renderTweets(data);
