@@ -71,10 +71,6 @@ $(document).ready(function() {
    * Handle the Submit button
    */
 
-  // $('button[type="submit"]').on("submit", function(event) {
-  //   event.preventDefault();
-  // });
-
   $("form").on("submit", function(event) {
     event.preventDefault();
     let serializedData = $(this).serialize();
@@ -84,7 +80,7 @@ $(document).ready(function() {
   });
 
   const loadTweets = function() {
-    // Use jQuery to make a request to /tweets and receive the array of tweets as JSON
+    // Use jQuery to make a GET request to /tweets and receive the array of tweets as JSON
     $.ajax('/tweets', { method: 'GET' })
       .then(function(tweetData) {
         console.log('Success: ', tweetData);
