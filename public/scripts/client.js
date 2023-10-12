@@ -67,5 +67,21 @@ $(document).ready(function() {
 
   renderTweets(data);
 
+  /**
+   * Handle the Submit button
+   */
+
+  // $('button[type="submit"]').on("submit", function(event) {
+  //   event.preventDefault();
+  // });
+
+  $("form").on("submit", function(event) {
+    event.preventDefault();
+    let serializedData = $(this).serialize();
+    console.log(serializedData);
+    $.post("/tweets", serializedData);
+  });
+
+
 });
 
