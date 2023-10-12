@@ -82,6 +82,9 @@ $(document).ready(function() {
     $.post("/tweets", serializedData);
   });
 
+  const loadTweets = function() {
+    // Use jQuery to make a request to /tweets and receive the array of tweets as JSON
 
+  };
 });
 
