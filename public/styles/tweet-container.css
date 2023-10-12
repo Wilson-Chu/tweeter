@@ -1,0 +1,27 @@
+article.tweet {
+  margin-top: 2em;
+  padding: 0 1em;
+  border: solid #545149;
+}
+
+article.tweet header {
+  /* Resets all styling from 'header' under navbar */
+  all: unset;
+
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+article.tweet .handle {
+  color: rgb(191, 191, 217)
+}
+
+article.tweet footer {
+  border-top: solid;
+}
+
+article.tweet footer h6 {
+  margin: 1em 1.5em 2em 1.5em;
+}
