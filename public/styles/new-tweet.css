@@ -38,6 +38,6 @@ section.new-tweet button:hover {
   cursor: pointer;
 }
 
-.invalid {
+.counter-invalid {
   color: red;
 }

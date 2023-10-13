@@ -37,12 +37,14 @@ $(document).ready(function() {
   };
 
   const renderTweets = function(tweets) {
+    $('.tweet-container').empty();
+
     // loops through tweets
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
     for (const tweet of tweets) {
       let $tweet = createTweetElement(tweet);
-      $('.tweet-container').append($tweet);
+      $('.tweet-container').prepend($tweet);
     }
   };
 
@@ -58,6 +60,7 @@ $(document).ready(function() {
     $.post("/tweets", serializedData).done(() => {
       $("#tweet-text").val("");
       $("form output.counter").text("140");
+
 
       // load the tweets when the new tweet is submitted
       loadTweets();

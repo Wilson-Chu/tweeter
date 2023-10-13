@@ -8,12 +8,12 @@ $(document).ready(function() {
     let charCounter = inputText.length;
     let charRemaining = charLimit - charCounter;
 
-    const $counterOutput = $("form output.counter"); // $('form div output')
+    const $counterOutput = $("form output.counter");
 
     if (charRemaining < 0) {
-      $counterOutput.addClass("invalid");
+      $counterOutput.addClass("counter-invalid");
     } else {
-      $counterOutput.removeClass("invalid");
+      $counterOutput.removeClass("counter-invalid");
     }
 
     $counterOutput.text(`${charRemaining}`);
