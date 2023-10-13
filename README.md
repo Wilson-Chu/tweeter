@@ -12,6 +12,8 @@ The prompt at the top right of the page will also toggle the input box to show/h
 
 !["screenshot of starting page"](https://github.com/Wilson-Chu/tweeter/blob/master/docs/tweeter-home.png?raw=true)
 
+!["screenshot of mobile-responsive webpage"](https://github.com/Wilson-Chu/tweeter/blob/master/docs/mobile-responsive-tweeter.png?raw=true)
+
 !["screenshot of error resulting from being over character limit"](https://github.com/Wilson-Chu/tweeter/blob/master/docs/overlimit-error.png?raw=true)
 
 !["screenshot of new tweet creation"](https://github.com/Wilson-Chu/tweeter/blob/master/docs/new-tweet.png?raw=true)
