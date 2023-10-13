@@ -60,7 +60,7 @@ $(document).ready(function() {
       $("#error-message").text("*** Your tweet is empty! Say something! AHHHHHHHH! ***").slideDown("slow");
     }
     else if (charCounter > charLimit) {
-      $("#error-message").text("*** You're saying WAAAAAYYYYYYYY too much! ***").slideDown("slow");
+      $("#error-message").text(`*** You're saying way too much! ${charLimit} characters or less please! ***`).slideDown("slow");
     } else {
       submitTweet();
     }
