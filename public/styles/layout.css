@@ -64,7 +64,6 @@ main p {
   }
 
   main.container {
-    /* display: flex; */
     width: 65%;
     margin-top: 8em;
   }

@@ -58,8 +58,7 @@ $(document).ready(function() {
 
     if (inputText === null || charCounter === 0) {
       $("#error-message").text("*** Your tweet is empty! Say something! AHHHHHHHH! ***").slideDown("slow");
-    }
-    else if (charCounter > charLimit) {
+    } else if (charCounter > charLimit) {
       $("#error-message").text(`*** You're saying way too much! ${charLimit} characters or less please! ***`).slideDown("slow");
     } else {
       submitTweet();
