@@ -8,6 +8,7 @@ Users can submit a message up to 140 characters long, and the program will displ
 
 The prompt at the top right of the page will also toggle the input box to show/hide upon a click (Stretch activity).
 
+## Final Product
 
 
 ## Getting Started
