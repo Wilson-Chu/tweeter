@@ -17,4 +17,19 @@ $(document).ready(function() {
     $('form div output').text(`${charRemaining}`);
   });
 
+  $("form").on("submit", function(event) {
+    // Get the text from the textarea
+    let inputText = $("#tweet-text").val();
+    const charLimit = 140;
+    let charCounter = inputText.length;
+
+    if (inputText === null || charCounter === 0 || charCounter > charLimit) {
+      // Prevent form submission
+      event.preventDefault();
+
+      // Show an alert to the user
+      alert("Please enter a valid tweet within the character limit.");
+    }
+  });
+
 });
