@@ -42,3 +42,38 @@ main.container {
 main p {
   width: 90%;
 }
+
+/* Mobile Devices & Tablets */
+@media only screen and (max-width: 1023px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  body nav {
+    background-color: rgba(64, 86, 161, 0);
+  }
+}
+
+/* Desktops */
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  main.container {
+    /* display: flex; */
+    width: 65%;
+    margin-top: 8em;
+  }
+
+  #profile-header {
+    width: 30%;
+    max-width: 500px;
+    top: 9em;
+    left: 1.5em;
+    position: sticky;
+  }
+}
