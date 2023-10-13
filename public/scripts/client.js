@@ -3,7 +3,6 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
 $(document).ready(function() {
 
   // Preventing XSS
@@ -49,9 +48,8 @@ $(document).ready(function() {
   };
 
   /**
-   * Handle the Submit button
+   * Handle the Submit Tweet button
    */
-
   $("form").on("submit", function(event) {
     event.preventDefault();
     let inputText = $("#tweet-text").val();
@@ -59,10 +57,10 @@ $(document).ready(function() {
     let charCounter = inputText.length;
 
     if (inputText === null || charCounter === 0) {
-      $("#error-message").text("Your tweet is empty! Say something! AHHHHHHHH!").slideDown();
+      $("#error-message").text("*** Your tweet is empty! Say something! AHHHHHHHH! ***").slideDown("slow");
     }
     else if (charCounter > charLimit) {
-      $("#error-message").text("You're saying WAAAAAYYYYYYYY too much!").slideDown("slow");
+      $("#error-message").text("*** You're saying WAAAAAYYYYYYYY too much! ***").slideDown("slow");
     } else {
       submitTweet();
     }
@@ -73,29 +71,22 @@ $(document).ready(function() {
     console.log(serializedData);
 
     $.post("/tweets", serializedData).done(() => {
+      // Hide the error message upon a successful tweet
+      $("#error-message").slideUp();
+
       $("#tweet-text").val("");
       $("form output.counter").text("140");
       loadTweets();
     });
   };
 
-
-
   const loadTweets = function() {
     // Use jQuery to make a GET request to /tweets and receive the array of tweets as JSON
     $.ajax('/tweets', { method: 'GET' })
       .then(function(tweetData) {
-        // Success path
-
-
-        console.log('Success: ', tweetData);
         renderTweets(tweetData); // Pass the JSON data directly to renderTweets
       });
-
-
   };
 
   loadTweets();
-
 });
-
