@@ -30,7 +30,7 @@ $(document).ready(function() {
       event.preventDefault();
 
       // Show an alert to the user
-      alert("Please enter a valid tweet within the character limit.");
+      return alert("Please enter a valid tweet within the character limit.");
     }
   });
 

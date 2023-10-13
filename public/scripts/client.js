@@ -54,24 +54,31 @@ $(document).ready(function() {
     event.preventDefault();
     let serializedData = $(this).serialize();
     console.log(serializedData);
-    // $.post("/tweets", serializedData);
-    // loadTweets();
+
     $.post("/tweets", serializedData).done(() => {
+      $("#tweet-text").val("");
+      $("form output.counter").text("140");
+
       // load the tweets when the new tweet is submitted
       loadTweets();
     });
   });
 
-  $("#tweet-text").val("");
+
 
 
   const loadTweets = function() {
     // Use jQuery to make a GET request to /tweets and receive the array of tweets as JSON
     $.ajax('/tweets', { method: 'GET' })
       .then(function(tweetData) {
+        // Success path
+
+
         console.log('Success: ', tweetData);
         renderTweets(tweetData); // Pass the JSON data directly to renderTweets
       });
+
+
   };
 
   loadTweets();
