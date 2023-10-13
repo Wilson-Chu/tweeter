@@ -54,19 +54,30 @@ $(document).ready(function() {
 
   $("form").on("submit", function(event) {
     event.preventDefault();
-    let serializedData = $(this).serialize();
+    let inputText = $("#tweet-text").val();
+    const charLimit = 140;
+    let charCounter = inputText.length;
+
+    if (inputText === null || charCounter === 0) {
+      $("#error-message").text("Your tweet is empty! Say something! AHHHHHHHH!").slideDown();
+    }
+    else if (charCounter > charLimit) {
+      $("#error-message").text("You're saying WAAAAAYYYYYYYY too much!").slideDown("slow");
+    } else {
+      submitTweet();
+    }
+  });
+
+  const submitTweet = function() {
+    let serializedData = $("form").serialize();
     console.log(serializedData);
 
     $.post("/tweets", serializedData).done(() => {
       $("#tweet-text").val("");
       $("form output.counter").text("140");
-
-
-      // load the tweets when the new tweet is submitted
       loadTweets();
     });
-  });
-
+  };
 
 
 
