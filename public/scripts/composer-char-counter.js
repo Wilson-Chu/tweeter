@@ -8,13 +8,15 @@ $(document).ready(function() {
     let charCounter = inputText.length;
     let charRemaining = charLimit - charCounter;
 
+    const $counterOutput = $("form output.counter"); // $('form div output')
+
     if (charRemaining < 0) {
-      $('form div output').css('color', 'red');
+      $counterOutput.addClass("invalid");
     } else {
-      $('form div output').css('color', '#545149');
+      $counterOutput.removeClass("invalid");
     }
 
-    $('form div output').text(`${charRemaining}`);
+    $counterOutput.text(`${charRemaining}`);
   });
 
   $("form").on("submit", function(event) {
