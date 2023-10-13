@@ -20,3 +20,7 @@ nav {
   flex-direction: column;
   align-items: center;
 }
+
+.prompt:hover {
+  cursor: pointer;
+}

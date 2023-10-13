@@ -88,4 +88,22 @@ $(document).ready(function() {
   };
 
   loadTweets();
+
+  /**
+   * Handle the prompt click to show/hide .new-tweet box
+   */
+  let showInput = true;
+
+  $(".prompt").on("click", function(event) {
+    event.preventDefault();
+
+    if (showInput) {
+      $(".new-tweet").slideDown();
+    } else {
+      $(".new-tweet").slideUp();
+    }
+
+    showInput = !showInput;
+  });
+
 });
